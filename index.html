@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weekend Challenge for Week 1</title>
+  </head>
+  <body>
+    <h1>My Damn Employees</h1>
+    <form id="employee-info">
+      <div class="pretty-form">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="firstName" required/>
+      </div>
+      <div class="pretty-form">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="lastName" required/>
+      </div>
+      <div class="pretty-form">
+        <label for="id-number">ID Number:</label>
+        <input type="text" id="id-number" name="idNumber" required/>
+      </div>
+      <div class="pretty-form">
+        <label for="job">Job Title:</label>
+        <input type="text" id="job" name="jobTitle" required/>
+      </div>
+      <div class="pretty-form">
+        <label for="annual-salary">Salary:</label>
+        <input type="number" id="annual-salary" name="salary" required/>
+      </div>
+
+      <button id="submit" type="submit">Submit</button>
+    </form>
+
+    <section>
+      <h2>Employee List:</h2>
+      <ul id="firstName">
+        <li class="list-heading">
+          First Name
+        </li>
+      </ul>
+
+      <ul id="lastName">
+        <li class="list-heading">
+          Last Name
+        </li>
+      </ul>
+
+      <ul id="idNumber">
+        <li class="list-heading">
+          ID Number
+        </li>
+      </ul>
+
+      <ul id="jobTitle">
+        <li class="list-heading">
+          Title
+        </li>
+      </ul>
+
+      <ul id="salary">
+        <li class="list-heading">
+          Annual Salary
+        </li>
+      </ul>
+
+      <ul id="deleteList">
+        <li class="list-heading">
+          Fire Employee?
+        </li>
+      </ul>
+    </section>
+
+    <h3>Monthly Salary Expenditures:</h3>
+    <span id="going-broke">Way Too Much!</span>
+
+  </body>
+</html>
