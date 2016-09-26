@@ -8,6 +8,7 @@ Make sure to fill out all of the required information for each employee, includi
 - ID Number
 - Job Title
 - Yearly salary
+
 Please note, the ID Number should be a unique identifier for each employee.  If you do not assign ID Numbers, just make something up and make sure it is unique!
 
 ### Deleting an employee
