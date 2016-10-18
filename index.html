@@ -2,79 +2,75 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Weekend Challenge for Week 1</title>
   </head>
   <body>
-    <h1>My Damn Employees</h1>
-    <form id="employee-info">
-      <div class="pretty-form">
-        <label for="first-name">First Name:</label>
-        <input type="text" id="first-name" name="firstName" required/>
-      </div>
-      <div class="pretty-form">
-        <label for="last-name">Last Name:</label>
-        <input type="text" id="last-name" name="lastName" required/>
-      </div>
-      <div class="pretty-form">
-        <label for="id-number">ID Number:</label>
-        <input type="text" id="id-number" name="idNumber" required/>
-      </div>
-      <div class="pretty-form">
-        <label for="job">Job Title:</label>
-        <input type="text" id="job" name="jobTitle" required/>
-      </div>
-      <div class="pretty-form">
-        <label for="annual-salary">Salary:</label>
-        <input type="number" id="annual-salary" name="salary" required/>
-      </div>
+    <main ng-app="basicApp">
+      <section ng-controller="BasicController as basic">
+        <h1>My Damn Employees</h1>
 
-      <button id="submit" type="submit">Submit</button>
-    </form>
+        <form name="basic.myForm" id="employee-info">
+          <div class="pretty-form">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" ng-model="basic.employee.firstName" required/>
+          </div>
+          <div class="pretty-form">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" ng-model="basic.employee.lastName" required/>
+          </div>
+          <div class="pretty-form">
+            <label for="id-number">ID Number:</label>
+            <input type="text" id="id-number" ng-model="basic.employee.idNumber" required/>
+          </div>
+          <div class="pretty-form">
+            <label for="job">Job Title:</label>
+            <input type="text" id="job" ng-model="basic.employee.jobTitle" required/>
+          </div>
+          <div class="pretty-form">
+            <label for="annual-salary">Salary:</label>
+            <input type="number" id="annual-salary" ng-model="basic.employee.salary" required/>
+          </div>
 
-    <section>
-      <h2>Employee List:</h2>
-      <ul id="firstName">
-        <li class="list-heading">
-          First Name
-        </li>
-      </ul>
+          <button id="submit" type="submit" ng-click="basic.createEmployee()">Submit</button>
+        </form>
 
-      <ul id="lastName">
-        <li class="list-heading">
-          Last Name
-        </li>
-      </ul>
+        <h2>Employee List:</h2>
+        <h3>First Name</h3>
+        <h3>Last Name</h3>
+        <h3>ID Number</h3>
+        <h3>Title</h3>
+        <h3>Salary</h3>
+        <h3>Fire This One?</h3>
+        <div ng-repeat="employee in basic.employees">
+          <div class="list first-name">
+            <p>{{ employee.firstName }}</p>
+          </div>
+          <div class="list last-name">
+            <p>{{ employee.lastName }}</p>
+          </div>
+          <div class="list id-number">
+            <p>{{ employee.idNumber }}</p>
+          </div>
+          <div class="list job-title">
+            <p>{{ employee.jobTitle }}</p>
+          </div>
+          <div class="list salary">
+            <p>{{ employee.salary }}</p>
+          </div>
+          <div class="list delete">
+            <button ng-click="basic.fireEmployee($index)" id="{{basic.employee.idNumber}}">Delete</button>
+          </div>
+        </div>
 
-      <ul id="idNumber">
-        <li class="list-heading">
-          ID Number
-        </li>
-      </ul>
+        <div id="salaries">
+          <h3>Monthly Salary Expenditures: </h3>
+          <span id="going-broke">{{ basic.salaries/12 }}</span>
+        </div>
 
-      <ul id="jobTitle">
-        <li class="list-heading">
-          Title
-        </li>
-      </ul>
-
-      <ul id="salary">
-        <li class="list-heading">
-          Annual Salary
-        </li>
-      </ul>
-
-      <ul id="deleteList">
-        <li class="list-heading">
-          Fire Employee?
-        </li>
-      </ul>
-    </section>
-
-    <h3>Monthly Salary Expenditures:</h3>
-    <span id="going-broke">Way Too Much!</span>
-
+      </section>
+    </main>
   </body>
 </html>

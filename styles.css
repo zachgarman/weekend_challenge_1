@@ -31,25 +31,13 @@ form button {
 h2 {
   text-decoration: underline;
 }
-section ul {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 10px;
-}
-section {
-  width: 1000px;
-  background-image: url(Background2.png);
-}
+
 .list-heading {
   font-weight: bold;
   font-size: 1.1em;
   text-decoration: underline;
 }
-h3 {
-  display: inline-block;
-  font-size: 1.5em;
-  margin: 50px 150px 0 0;
-}
+
 #going-broke {
   font-weight: bold;
   color: red;
@@ -70,4 +58,12 @@ li {
 }
 ul {
   margin: 0 auto;
+}
+.list, h3 {
+  display: inline-block;
+  margin-right: 15px;
+  min-width: 125px;
+}
+div.list {
+  margin-top: -25px;
 }
