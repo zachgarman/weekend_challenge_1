@@ -24,3 +24,4 @@ Zach Garman
 
 #### Assignment
 Prime Weekend assignment for week 1.
+Redone Week 5 in Angular in a fraction of the time.
